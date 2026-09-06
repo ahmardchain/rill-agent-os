@@ -1,0 +1,16 @@
+interface:
+  display_name: "Rill"
+  short_description: "Budgeted procurement for autonomous agents"
+  default_prompt: "Use $rill to plan the lowest-cost policy-safe resource route for this job and return a deterministic receipt."
+
+policy:
+  allow_implicit_invocation: true
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "binance"
+      description: "Binance Agent OS public market data"
+      transport: "streamable_http"
+      url: "https://agent.binance.com/mcp/agentic"
+

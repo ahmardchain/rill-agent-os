@@ -1,0 +1,19 @@
+{
+  "taskId": "brief_24h_duplicate",
+  "task": "Find what moved BTC volatility in the last 24 hours and return a verified brief.",
+  "currency": "USDC",
+  "budget": 5,
+  "requiredCapabilities": ["news", "compute", "proof"],
+  "quotes": [
+    { "vendor": "context.index", "capability": "news", "price": 0.18, "requestFingerprint": "news:btc:24h" },
+    { "vendor": "quant.compute", "capability": "compute", "price": 0.42, "requestFingerprint": "compute:btc:volatility" },
+    { "vendor": "proof.layer", "capability": "proof", "price": 0.08, "requestFingerprint": "proof:btc:brief" }
+  ],
+  "paidFingerprints": ["compute:btc:volatility"],
+  "policy": {
+    "version": "2.0",
+    "maxPerResource": 1,
+    "humanApprovalAbove": 2,
+    "allowedVendors": ["context.index", "quant.compute", "proof.layer"]
+  }
+}
